@@ -1,0 +1,44 @@
+/* Definición de la paleta de colores (Inspirada en tus referencias) */
+:root {
+  --rosa-principal: #ff7597;
+  --rosa-claro: #ffe6eb;
+  --dorado: #c5a059;
+  --texto-oscuro: #333333;
+  
+  /* Fuentes (Las importaremos después) */
+  --fuente-titulos: 'Great Vibes', cursive;
+  --fuente-textos: 'Montserrat', sans-serif;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e9ecef; /* Fondo neutro para pantallas grandes */
+  font-family: var(--fuente-textos);
+  color: var(--texto-oscuro);
+  display: flex;
+  justify-content: center;
+}
+
+/* El truco responsivo: Simular una pantalla de celular en Desktop */
+.contenedor-principal {
+  width: 100%;
+  max-width: 450px; /* Ancho típico de un smartphone grande */
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Imágenes siempre responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
