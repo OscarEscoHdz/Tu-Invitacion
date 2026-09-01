@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Danna Camila</title>
+    <link rel="stylesheet" href="../../../css/style.css"> <!-- Estilos globales -->
+</head>
+<body>
+
+    <!-- El contenedor principal abre justo después del body -->
+    <div class="contenedor-principal">
+
+        <!-- 1. Portada -->
+        <header class="portada">
+            <img src="img/tiara.png" alt="Mis 15 años" class="imagen-portada">
+            <h1>Mis 15 años</h1>
+            <h2>Danna Camila Palafox Ortiz</h2>
+        </header>
+
+        <!-- 2. Reproductor -->
+        <section class="audio-player">
+            <h3>Reproduce mi canción:</h3>
+            
+            <!-- Etiqueta de audio oculta -->
+            <audio id="musicaFondo" loop>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            </audio>
+            
+            <!-- Controles personalizados -->
+            <div class="controles-audio">
+                <button id="btnPlayPause" class="btn-musica">▶️ Reproducir</button>
+            </div>
+        </section>
+
+        <!-- 3. Calendario y Cuenta Regresiva -->
+        <section class="fecha-contador">
+            <h3>Reserva este día:</h3>
+            <div class="calendario">Octubre 2026...</div>
+            <h3>Faltan:</h3>
+            
+            <!-- Estructura actualizada para que funcione el JavaScript -->
+            <div id="contador" class="contador-grid">
+                <div class="tiempo-caja">
+                    <span id="dias">00</span>
+                    <p>DÍAS</p>
+                </div>
+                <div class="tiempo-caja">
+                    <span id="horas">00</span>
+                    <p>HORAS</p>
+                </div>
+                <div class="tiempo-caja">
+                    <span id="minutos">00</span>
+                    <p>MINUTOS</p>
+                </div>
+                <div class="tiempo-caja">
+                    <span id="segundos">00</span>
+                    <p>SEGUNDOS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Itinerario -->
+        <section class="itinerario">
+            <h3>Ven a celebrar el día:</h3>
+            
+            <div class="bloque-fecha">
+                <p class="mes-destacado">AGOSTO</p>
+                <div class="dia-anio">
+                    <span class="dia-texto">SÁBADO</span>
+                    <span class="numero-dia">01</span>
+                    <span class="anio-texto">2026</span>
+                </div>
+            </div>
+
+            <div class="detalles-evento">
+                <p>⛪ <strong>Misa:</strong> 7:00 pm</p>
+                <p>🥂 <strong>Recepción:</strong> 7:30 pm</p>
+            </div>
+        </section>
+
+        <!-- 5. Ubicación -->
+        <section class="ubicacion">
+            <h3>Recepción:</h3>
+            
+            <div class="icono-ubicacion">📍</div>
+            <h4>Salón de eventos Arantzza</h4>
+            
+            <p class="direccion">
+                Batalla de Tunas Blancas #30<br>
+                esquina 24 de abril de 1860<br>
+                C.P. 09310 CDMX Alcaldía Iztapalapa.
+            </p>
+            
+            <!-- Aquí el cliente te pasará el link de Google Maps -->
+            <a href="https://maps.app.goo.gl/MJUjmSMfWb8u4P2b6" target="_blank" class="btn-ubicacion">Ver en Mapa</a>
+        </section>
+
+        <!-- 6. Sección Opcional: Lista de Deseos / Mesa de Regalos -->
+        <section class="lista-deseos">
+            <h3>Mesa de Regalos</h3>
+            <p>Tu presencia es mi mejor regalo, pero si deseas tener un detalle conmigo, aquí te dejo algunas sugerencias:</p>
+            
+            <div class="grid-regalos">
+                <!-- Artículo 1 -->
+                <div class="regalo-item">
+                    <img src="img/audifonos.jpg" alt="Regalo sugerido">
+                    <p>Audífonos Inalámbricos</p>
+                    <a href="https://a.co/d/005FqyL6" target="_blank" class="btn-tienda">Ver en Tienda</a>
+                </div>
+                
+                <!-- Artículo 2 -->
+                <div class="regalo-item">
+                    <img src="img/maquillaje.jpg" alt="Regalo sugerido">
+                    <p>Kit de Maquillaje</p>
+                    <a href="https://a.co/d/0jdUFQ4G" target="_blank" class="btn-tienda">Ver Tienda</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Confirmación WhatsApp -->
+        <section class="confirmacion">
+            <h3>¡Espero contar contigo!</h3>
+            <p>Por favor, confirma tu asistencia antes del 15 de julio.</p>
+            
+            <a href="https://wa.me/525534941157?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20años." target="_blank" class="btn-whatsapp-final">
+                💬 Confirmar Asistencia
+            </a>
+        </section>
+
+    <!-- El contenedor principal cierra justo antes de los scripts y el body -->
+    </div>
+
+    <script src="../../../js/main.js"></script> <!-- Scripts globales -->
+</body>
+</html>

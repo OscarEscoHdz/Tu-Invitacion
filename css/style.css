@@ -1,16 +1,16 @@
-/* Definición de la paleta de colores (Inspirada en tus referencias) */
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
 :root {
   --rosa-principal: #ff7597;
   --rosa-claro: #ffe6eb;
   --dorado: #c5a059;
   --texto-oscuro: #333333;
-  
-  /* Fuentes (Las importaremos después) */
   --fuente-titulos: 'Great Vibes', cursive;
   --fuente-textos: 'Montserrat', sans-serif;
 }
 
-/* Reset básico */
+/* === RESET Y CONTENEDOR PRINCIPAL (Las líneas que faltaban) === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,27 +18,292 @@
 }
 
 body {
-  background-color: #e9ecef; /* Fondo neutro para pantallas grandes */
-  font-family: var(--fuente-textos);
-  color: var(--texto-oscuro);
+  background-color: #e9ecef;
+  margin: 0;
   display: flex;
   justify-content: center;
+  font-family: var(--fuente-textos);
+  color: var(--texto-oscuro);
 }
 
-/* El truco responsivo: Simular una pantalla de celular en Desktop */
 .contenedor-principal {
   width: 100%;
-  max-width: 450px; /* Ancho típico de un smartphone grande */
+  max-width: 450px;
+  margin: 0 auto;
   background-color: #ffffff;
   min-height: 100vh;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
   overflow-x: hidden;
 }
 
-/* Imágenes siempre responsivas */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* === TIPOGRAFÍA GENERAL === */
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--rosa-principal);
+  font-weight: normal;
+}
+
+h1 { font-size: 4rem; margin-bottom: 0.5rem; }
+h2 { font-size: 2rem; color: var(--texto-oscuro); margin-bottom: 2rem; }
+h3 { font-size: 2.8rem; margin: 1.5rem 0; }
+
+p, div {
+  font-family: var(--fuente-textos);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* === SEPARACIÓN ENTRE SECCIONES === */
+section {
+  padding: 2rem 1.5rem;
+  border-bottom: 2px solid var(--rosa-claro);
+}
+
+/* === ESTILOS DE LA MESA DE REGALOS === */
+.lista-deseos p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-style: italic;
+}
+
+.grid-regalos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.regalo-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--rosa-claro);
+}
+
+.regalo-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--rosa-claro);
+  /* === Nuevas reglas Flexbox === */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Obliga a la tarjeta a usar toda la altura de la cuadrícula */
+}
+
+.regalo-item img {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.regalo-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  /* === Esta es la magia === */
+  flex-grow: 1; /* Hace que el texto rellene el espacio vacío, empujando el botón hacia abajo */
+}
+
+/* === BOTONES GENÉRICOS === */
+.btn-tienda, .btn-whatsapp {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-family: var(--fuente-textos);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.btn-tienda {
+  background-color: var(--dorado);
+  color: #fff;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  margin-top: 1rem;
+}
+
+.btn-tienda:hover, .btn-whatsapp:hover {
+  transform: scale(1.05);
+}
+
+/* === ESTILOS DEL CONTADOR === */
+.contador-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.tiempo-caja {
+    display: flex;
+    flex-direction: column;
+}
+
+.tiempo-caja span {
+    font-size: 2.5rem;
+    color: var(--rosa-principal);
+    font-weight: 600;
+}
+
+.tiempo-caja p {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: var(--texto-oscuro);
+}
+
+/* === REPRODUCTOR DE MÚSICA === */
+.btn-musica {
+  background-color: var(--rosa-principal);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: var(--fuente-textos);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-musica:hover {
+  background-color: var(--dorado);
+  transform: scale(1.05);
+}
+
+/* === ESTILOS DEL ITINERARIO === */
+.bloque-fecha {
+    margin: 20px auto;
+    padding: 15px 0;
+    width: 80%;
+    border-top: 2px solid var(--dorado);
+    border-bottom: 2px solid var(--dorado);
+}
+
+.mes-destacado {
+    color: var(--rosa-principal);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dia-anio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: var(--rosa-principal);
+    font-weight: 600;
+}
+
+.numero-dia {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.detalles-evento {
+    margin-top: 20px;
+}
+
+.detalles-evento p {
+    font-size: 1.2rem;
+    color: var(--dorado);
+    margin: 8px 0;
+}
+
+.detalles-evento strong {
+    font-weight: 600;
+}
+
+/* === ESTILOS DE LA UBICACIÓN === */
+.icono-ubicacion {
+    font-size: 3.5rem;
+    margin: 15px 0;
+}
+
+.ubicacion h4 {
+    color: var(--dorado);
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.direccion {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    padding: 0 15px;
+    font-style: italic;
+}
+
+.btn-ubicacion {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--dorado);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-family: var(--fuente-textos);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-ubicacion:hover {
+    transform: scale(1.05);
+}
+
+/* === SECCIÓN DE CONFIRMACIÓN === */
+.confirmacion {
+    padding-bottom: 4rem; /* Da un respiro al final de la página */
+    border-bottom: none; /* Quitamos la línea final */
+}
+
+.confirmacion p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.btn-whatsapp-final {
+    display: inline-block;
+    background-color: #25D366; /* Verde oficial de WhatsApp */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 35px;
+    border-radius: 30px;
+    font-family: var(--fuente-textos);
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); /* Sombra verde difuminada */
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp-final:hover {
+    background-color: #128C7E; /* Verde más oscuro al pasar el cursor */
+    transform: translateY(-3px); /* Efecto de levantarse ligeramente */
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* === ESTILOS DE LA IMAGEN DE PORTADA === */
+.imagen-portada {
+    width: 100%;
+    max-width: 250px; /* Limita el tamaño para que sea un adorno proporcional */
+    height: auto;
+    object-fit: contain; /* Asegura que la imagen completa se vea sin recortarse */
+    margin: 30px auto 15px auto; /* Centra la imagen horizontalmente */
+    display: block;
 }
